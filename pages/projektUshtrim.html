@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="text" id="detyrare" placeholder="Shkruaj nje detyre...">
+    <button onclick="shtoDetyren()">Shto ne Liste</button>
+    <ul id="listadetyrave"></ul>
+
+    <script>
+        function shtoDetyren(){
+            let teksti = document.getElementById("detyrare").value;
+            if(teksti !== "")
+        {
+            let liERe = document.createElement("li");
+            liERe.textContent = teksti;
+            document.getElementById("listaDetyrave").appendChild(liERe);
+        }
+        }
+    </script>
+</body>
+</html>

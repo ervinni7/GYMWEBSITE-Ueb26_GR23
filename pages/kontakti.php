@@ -2,6 +2,49 @@
 session_start();
 $pageTitle   = 'Kontakti';
 $pageScripts = ['/gym-php-v2/assets/js/joinus.js'];
+
+$success = false;
+$errors  = [];
+$old     = [
+    'name'    => '',
+    'email'   => '',
+    'tel'     => '',
+    'message' => ''
+];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dergomesazhin'])) {
+    $old['name']    = trim($_POST['name'] ?? '');
+    $old['email']   = trim($_POST['email'] ?? '');
+    $old['tel']     = trim($_POST['tel'] ?? '');
+    $old['message'] = trim($_POST['message'] ?? '');
+
+    if ($old['name'] === '') {
+        $errors['name'] = 'Emri eshte i detyrueshem.';
+    }
+
+    if ($old['email'] === '') {
+        $errors['email'] = 'Email-i eshte i detyrueshem.';
+    }
+
+    if ($old['tel'] === '') {
+        $errors['tel'] = 'Numri i telefonit është i detyrueshem.';
+    }
+
+    if ($old['message'] === '') {
+        $errors['message'] = 'Mesazhi eshte i detyrueshem.';
+    }
+
+    if (empty($errors)) {
+        $success = true;
+        $old = [
+            'name'    => '',
+            'email'   => '',
+            'tel'     => '',
+            'message' => ''
+        ];
+    }
+}
+
 require_once dirname(__DIR__) . '/includes/header.php';
 ?>
 
@@ -16,6 +59,13 @@ require_once dirname(__DIR__) . '/includes/header.php';
 
       <div class="kontakt-form" data-aos="fade-left">
         <h3>Na Dërgoni Mesazh 📩</h3>
+
+          <?php if ($success): ?>
+          <div style="background:#1a3a1a;border:1px solid #4caf50;color:#81c784;padding:14px;border-radius:8px;margin-bottom:14px;">
+            ✅ <strong>Faleminderit!</strong> Mesazhi juaj u dërgua me sukses!
+          </div>
+        <?php endif; ?>
+
         <form action="">
           <input type="text" placeholder="Emri juaj" class="kontakt-input" required>
           <input type="email" placeholder="Email-i juaj" class="kontakt-input" required>
