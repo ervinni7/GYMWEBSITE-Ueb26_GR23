@@ -66,12 +66,65 @@ require_once dirname(__DIR__) . '/includes/header.php';
           </div>
         <?php endif; ?>
 
-        <form action="">
-          <input type="text" placeholder="Emri juaj" class="kontakt-input" required>
-          <input type="email" placeholder="Email-i juaj" class="kontakt-input" required>
-          <input type="tel" placeholder="Numri i Telefonit" class="kontakt-input" required>
-          <textarea placeholder="Mesazhi juaj..." rows="3" class="kontakt-input"></textarea>
-          <button type="submit" class="kontakt-btn">DËRGO MESAZHIN</button>
+    <form method="POST" action="">
+          <input
+            type="text"
+            name="name"
+            placeholder="Emri juaj"
+            class="kontakt-input"
+            value="<?php echo htmlspecialchars($old['name']); ?>"
+            required
+          >
+          <?php if (!empty($errors['name'])): ?>
+            <p style="color:#ff6b6b;font-size:13px;margin:-8px 0 8px;text-align:left;">
+              ⚠️ <?php echo $errors['name']; ?>
+            </p>
+          <?php endif; ?>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email-i juaj"
+            class="kontakt-input"
+            value="<?php echo htmlspecialchars($old['email']); ?>"
+            required
+          >
+          <?php if (!empty($errors['email'])): ?>
+            <p style="color:#ff6b6b;font-size:13px;margin:-8px 0 8px;text-align:left;">
+              ⚠️ <?php echo $errors['email']; ?>
+            </p>
+          <?php endif; ?>
+
+          <input
+            type="tel"
+            name="tel"
+            placeholder="Numri i Telefonit"
+            class="kontakt-input"
+            value="<?php echo htmlspecialchars($old['tel']); ?>"
+            required
+          >
+          <?php if (!empty($errors['tel'])): ?>
+            <p style="color:#ff6b6b;font-size:13px;margin:-8px 0 8px;text-align:left;">
+              ⚠️ <?php echo $errors['tel']; ?>
+            </p>
+          <?php endif; ?>
+
+          <textarea
+            name="message"
+            placeholder="Mesazhi juaj..."
+            rows="3"
+            class="kontakt-input"
+            required
+          ><?php echo htmlspecialchars($old['message']); ?></textarea>
+          <?php if (!empty($errors['message'])): ?>
+            <p style="color:#ff6b6b;font-size:13px;margin:-8px 0 8px;text-align:left;">
+              ⚠️ <?php echo $errors['message']; ?>
+            </p>
+          <?php endif; ?>
+
+          <button type="submit" name="dergomesazhin" class="kontakt-btn">
+            DËRGO MESAZHIN
+          </button>
         </form>
       </div>
     </div>
