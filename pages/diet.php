@@ -171,3 +171,16 @@ require_once dirname(__DIR__) . '/includes/header.php';
 
 <!-- jQuery hover efektet origjinale -->
 <script>
+$(document).ready(function() {
+  $('.diet-item').hover(
+    function() { $(this).css({ transform: 'scale(1.04)', transition: 'transform 0.5s ease' }); },
+    function() { $(this).css('transform', 'scale(1)'); }
+  );
+  $('.cta-link').hover(
+    function() { $(this).css({ opacity: '0.85', transition: 'opacity 0.2s ease' }); },
+    function() { $(this).css('opacity', '1'); }
+  );
+});
+</script>
+
+<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
