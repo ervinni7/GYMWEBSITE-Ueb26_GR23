@@ -20,18 +20,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dergomesazhin'])) {
 
     if ($old['name'] === '') {
         $errors['name'] = 'Emri eshte i detyrueshem.';
+    } elseif (strlen($old['name']) < 2) {
+        $errors['name'] = 'Emri duhet të ketë së paku 2 karaktere.';
     }
 
     if ($old['email'] === '') {
         $errors['email'] = 'Email-i eshte i detyrueshem.';
+    } elseif (!preg_match('/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/', $old['email'])) {
+        $errors['email'] = 'Email-i nuk është i vlefshëm.';
     }
 
     if ($old['tel'] === '') {
         $errors['tel'] = 'Numri i telefonit është i detyrueshem.';
+    } elseif (!preg_match('/^(\+3834[4-9]\d{6}|0(44|45|46|47|48|49)\d{6})$/', $old['tel'])) {
+        $errors['tel'] = 'Numri i telefonit nuk është i vlefshëm.';
     }
 
     if ($old['message'] === '') {
         $errors['message'] = 'Mesazhi eshte i detyrueshem.';
+    } elseif (strlen($old['message']) < 5) {
+        $errors['message'] = 'Mesazhi duhet të ketë së paku 5 karaktere.';
     }
 
     if (empty($errors)) {
@@ -44,6 +52,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dergomesazhin'])) {
         ];
     }
 }
+ $mapTitle = 'NA GJENI TEK:';
+ $mapEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.5928503259615!2d21.167150700000004!3d42.648790700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ec1b6ecb2c1%3A0x7f0893730efce187!2sFaculty%20of%20Technology!5e0!3m2!1sen!2s!4v1765804472914!5m2!1sen!2s';
+$directions = [
+    [
+        'icon'  => '🚌',
+        'title' => 'Me Autobus:',
+        'text'  => 'Merrni linjën 4 ose 3. Zbrisni tek stacioni "Bregu i Diellit" ose "Fakulteti Teknik". Palestra është 2 minuta larg në këmbë.'
+    ],
+    [
+        'icon'  => '🚗',
+        'title' => 'Me Veturë:',
+        'text'  => 'Nga qendra, ndiqni rrugën "Agim Ramadani" drejt Fakultetit Teknik. Kemi parking falas prapa ndërtesës.'
+    ],
+    [
+        'icon'  => '🚶',
+        'title' => 'Në Këmbë:',
+        'text'  => 'Nëse jeni tek "Rruga B", ecni drejt rreth rrotullimit kryesor dhe ngjituni lart drejt pishinave.'
+    ],
+];
+
+$faqItems = [
+    [
+        'question' => 'Sa kushton muaji?',
+        'answer'   => 'Muaji kushton 20 Euro. Kemi edhe oferta speciale për studentë dhe pako vjetore me zbritje.'
+    ],
+    [
+        'question' => 'A keni trajner personal?',
+        'answer'   => 'Po, kemi trajnerë profesionistë që mund t\'i angazhoni ekstra për stërvitje private dhe plane diete.'
+    ],
+    [
+        'question' => 'Kur është hapur palestra?',
+        'answer'   => 'Jemi hapur çdo ditë: Hënë-Premte (06:00-22:00) dhe në fundjavë me orar të shkurtuar.'
+    ],
+];
+
 
 require_once dirname(__DIR__) . '/includes/header.php';
 ?>
@@ -187,7 +230,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <p>Muaji kushton 20 Euro. Kemi edhe oferta speciale për studentë dhe pako vjetore me zbritje.</p>
       </div>
     </div>
-
+ 
     <div class="faq-item">
       <div class="faq-pyetje">
         <h3>A keni trajner personal?</h3>
