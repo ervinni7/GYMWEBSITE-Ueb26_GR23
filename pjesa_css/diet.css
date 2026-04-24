@@ -18,7 +18,7 @@ html, body {
 
 .intro-section {
   margin:0;
-    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url("/gym-php-v2/assets/fotot/dietbackground.png") center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url("/GYMWEBSITE-UEB26_GR23/assets/fotot/dietbackground.png") center/cover no-repeat;
 }
 
 .intro-layout {
