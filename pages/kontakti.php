@@ -1,7 +1,7 @@
 <?php
 session_start();
 $pageTitle   = 'Kontakti';
-$pageScripts = ['/gym-php-v2/assets/js/joinus.js'];
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/kontakti.js'];
 
 $success = false;
 $errors  = [];
@@ -253,4 +253,4 @@ require_once dirname(__DIR__) . '/headeri/header.php';
   </div>
 </section>
 
-<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>
