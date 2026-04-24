@@ -1,8 +1,8 @@
 <?php
 session_start();
 $pageTitle   = 'Dietat';
-$pageScripts = ['/gym-php-v2/assets/js/diet.js'];
-require_once dirname(__DIR__) . '/includes/header.php';
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/diet.js'];
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <section aria-label="Përmbledhje e dietave" class="intro-section">
@@ -59,7 +59,8 @@ require_once dirname(__DIR__) . '/includes/header.php';
   <div class="diet-item" data-target="lowcarb"><h3>Low-Carb🥗</h3><p>Karbo të ulëta • 6-10 javë</p></div>
 </section>
 
-<section id="diet-details">
+
+<section id="diet-details" style="display:block;">
   <h2>Detajet e dietave</h2>
 
   <div id="diet-bulking" class="diet-card">
@@ -114,8 +115,10 @@ require_once dirname(__DIR__) . '/includes/header.php';
     </table>
     <h4>Shembull jave</h4>
     <ul>
-      <li>2 vakte me peshk</li><li>2 vakte me mish pule/gjeli</li>
-      <li>1 vakt me mish të kuq të ligët</li><li>Perime çdo ditë + fruta 1-2x në ditë</li>
+      <li>2 vakte me peshk</li>
+      <li>2 vakte me mish pule/gjeli</li>
+      <li>1 vakt me mish të kuq të ligët</li>
+      <li>Perime çdo ditë + fruta 1-2x në ditë</li>
     </ul>
   </div>
 
@@ -131,10 +134,13 @@ require_once dirname(__DIR__) . '/includes/header.php';
     </table>
     <h4>Shembull dite</h4>
     <ul>
-      <li>Mëngjes: Tërshërë me qumësht soje + fruta</li><li>Drekë: Oriz integral + thjerrëza + sallatë</li>
-      <li>Snack: Fara + arra miks</li><li>Darkë: Tofu i pjekur + perime në zgarë</li>
+      <li>Mëngjes: Tërshërë me qumësht soje + fruta</li>
+      <li>Drekë: Oriz integral + thjerrëza + sallatë</li>
+      <li>Snack: Fara + arra miks</li>
+      <li>Darkë: Tofu i pjekur + perime në zgarë</li>
     </ul>
   </div>
+
   <div id="diet-highprotein" class="diet-card">
     <h3>High-Protein — Proteinë e lartë</h3>
     <table class="diet-detail">
@@ -146,8 +152,10 @@ require_once dirname(__DIR__) . '/includes/header.php';
     </table>
     <h4>Shembull dite</h4>
     <ul>
-      <li>Mëngjes: Vezë + të bardha + perime</li><li>Snack: Shaker whey + banane</li>
-      <li>Drekë: Pulë + oriz + perime</li><li>Snack: Kos grek + fara chia</li>
+      <li>Mëngjes: Vezë + të bardha + perime</li>
+      <li>Snack: Shaker whey + banane</li>
+      <li>Drekë: Pulë + oriz + perime</li>
+      <li>Snack: Kos grek + fara chia</li>
       <li>Darkë: Gjel deti + sallatë</li>
     </ul>
   </div>
@@ -163,13 +171,15 @@ require_once dirname(__DIR__) . '/includes/header.php';
     </table>
     <h4>Shembull dite</h4>
     <ul>
-      <li>Mëngjes: Omeletë me perime</li><li>Drekë: Pulë + sallatë jeshile</li>
-      <li>Snack: Arra ose bajame</li><li>Darkë: Peshk + brokoli + sallatë</li>
+      <li>Mëngjes: Omeletë me perime</li>
+      <li>Drekë: Pulë + sallatë jeshile</li>
+      <li>Snack: Arra ose bajame</li>
+      <li>Darkë: Peshk + brokoli + sallatë</li>
     </ul>
   </div>
 </section>
 
-<!-- jQuery hover efektet origjinale -->
+<!-- jQuery hover efektet -->
 <script>
 $(document).ready(function() {
   $('.diet-item').hover(
@@ -183,4 +193,7 @@ $(document).ready(function() {
 });
 </script>
 
-<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
+<!-- ✅ diet.js me path të saktë -->
+<script src="/GYMWEBSITE-UEB26_GR23/Pjesa_JS/diet.js"></script>
+
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>

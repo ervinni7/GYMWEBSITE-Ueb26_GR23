@@ -2,7 +2,7 @@
 session_start();
 
 $pageTitle   = 'Oferta 3 në 1';
-$pageScripts = ['/gym-php-v2/assets/js/pakot.js'];
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/pakot.js'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $id = $_POST['id'] ?? '';
@@ -32,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     }
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <main class="product-page">
   <div class="product-container">
     <div class="product-image-box">
-      <img src="/gym-php-v2/assets/fotot/1vit3.png" alt="Oferta 3 në 1">
+      <img src="/GYMWEBSITE-UEB26_GR23/assets/fotot/1vit3.png" alt="Oferta 3 në 1">
     </div>
 
     <div class="product-info-box">
@@ -61,7 +61,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <input type="hidden" name="id" value="oferta-3-ne-1">
         <input type="hidden" name="title" value="Oferta 3 në 1">
         <input type="hidden" name="price" value="180">
-        <input type="hidden" name="image" value="/gym-php-v2/assets/fotot/1vit3.png">
+        <input type="hidden" name="image" value="/GYMWEBSITE-UEB26_GR23/assets/fotot/1vit3.png">
         <input type="hidden" name="quantity" id="quantity-input" value="1">
 
         <div class="quantity">
@@ -77,7 +77,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         Pako bëhet aktive nga momenti i pagesës dhe vlen 12 muaj për të tre personat.
       </p>
 
-      <a href="/gym-php-v2/pages/pakot.php" class="back-link">← Kthehu te të gjitha pakot</a>
+      <a href="/GYMWEBSITE-UEB26_GR23/pages/pakot.php" class="back-link">← Kthehu te të gjitha pakot</a>
     </div>
   </div>
 </main>
@@ -116,4 +116,4 @@ Swal.fire({
 </script>
 <?php endif; ?>
 
-<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>

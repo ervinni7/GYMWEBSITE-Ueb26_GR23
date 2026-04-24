@@ -1,0 +1,142 @@
+/* Reset i margjinave dhe padding-ut për të gjithë elementët */
+* {
+  box-sizing: border-box;
+  margin: 0;   
+  padding: 0;
+}
+/* Stilizimi bazik për faqen dhe fontin */
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+/* Kontejneri kryesor që mban përmbajtjen */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  /* Animacion fade-in kur hapet faqja */
+  animation: fadeIn 1s ease-in;
+}
+
+/* Animacioni fadeIn - bën që përmbajtja të shfaqet gradualisht */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Seksioni Hero me titull dhe slogan*/
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #ff8800;
+}
+.hero h2 {
+  color: #ff8800;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.hero .tag {
+  color: #555;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Rresht me imazh dhe tekst*/
+.row {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 25px 0;
+  padding: 20px;
+  background: #fafafa;
+  border-left: 4px solid #ff8800;
+  flex-wrap: wrap;
+  opacity: 1;
+}
+.row img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+/* Teksti brenda rreshtit*/
+.card-text {
+  max-width: 550px;
+  flex: 1; /* Zgjerimi sipas nevojës */
+  cursor: pointer;
+}
+.card-text h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+.card-text p {
+  line-height: 1.6;
+  color: #444;
+  font-size: 15px;
+}
+
+.info-line {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  padding: 15px;
+  background: #fff3e0;
+  border-radius: 5px;
+}
+.info-line h3 {
+  margin-right: 10px;
+  font-size: 17px;
+  color: #333;
+}
+.hours {
+  font-size: 15px;
+  color: #555;
+  font-weight: bold;
+}
+/* Stili i butonit*/
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 15px;
+  border-radius: 5px;
+  background: #ff8800;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #ff8800;
+  cursor: pointer;
+  /* Transition për ndryshim të butë të ngjyrave */
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: white;
+  color: #ff8800;
+}
+
+/*  Media query për ekrane të vogla*/
+@media (max-width: 760px) {
+  .row {
+    flex-direction: column;/* Vendos vertikalisht imazhin dhe tekstin */
+    text-align: center;/* Qendrim i tekstit në mes */
+  }
+  .card-text {
+    max-width: 100%; /* Teksti zgjerohet në të gjithë hapësirën */
+  }
+}
