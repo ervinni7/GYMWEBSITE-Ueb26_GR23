@@ -88,7 +88,7 @@ $faqItems = [
 ];
 
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <main style="text-align: center;">
