@@ -96,6 +96,8 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
       border: 1px solid #2a2a2a;
     }
     .hint span { color: #ff8800; }
+    .back { display: block; text-align: center; margin-top: 16px; color: #ff8800; font-size: 14px; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -128,6 +130,8 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
     👑 Admin &nbsp;: <span>admin</span> / <span>admin123</span><br>
     🏋️ Member: <span>member</span> / <span>member123</span>
   </div>
+
+  <a href="/gym-php-v2/pages/kreu.php" class="back">← Kthehu te faqja kryesore</a>
 </div>
 
 </body>
