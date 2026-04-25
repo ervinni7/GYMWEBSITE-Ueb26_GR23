@@ -67,6 +67,8 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
     .login-logo { text-align: center; margin-bottom: 6px; }
     .login-logo h1 { color: #ff8800; font-size: 32px; margin: 0; }
     .login-logo p  { color: #888; font-size: 14px; margin: 4px 0 24px; }
+    .welcome { color: #aaa; text-align: center; font-size: 13px; margin-bottom: 16px; }
+    .welcome span { color: #ff8800; }
     .error-box {
       background: #2a1010; border: 1px solid #cc3333;
       color: #ff8b8b; padding: 11px 14px; border-radius: 7px;
@@ -107,6 +109,10 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
     <h1>E's GYM</h1>
     <p>🔐 Zona e Anëtarëve</p>
   </div>
+
+  <?php if ($lastUser): ?>
+    <p class="welcome">Mirë se u kthevet, <span><?php echo htmlspecialchars($lastUser); ?></span>! 👋</p>
+  <?php endif; ?>
 
   <?php if ($error): ?>
     <div class="error-box">⚠️ <?php echo htmlspecialchars($error); ?></div>
