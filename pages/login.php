@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once __DIR__ . '/classes/User.php';
+require_once __DIR__ . '/../classes/User.php';
 
 // Nëse është tashmë i kyçur, dërgo te dashboard
 if (isset($_SESSION['user_role'])) {
-    header('Location: /gym-php-v2/pages/dashboard.php');
+    header('Location: dashboard.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             // Cookie — kujton emrin 30 ditë (Cookies kërkesë Faza I)
             setcookie('gym_last_user', $user->getName(), time() + 30 * 24 * 3600, '/');
-            header('Location: /gym-php-v2/pages/dashboard.php');
+            header('Location: dashboard.php');
             exit;
         } else {
             $error = 'Emri i përdoruesit ose fjalëkalimi është i gabuar.';
@@ -43,8 +43,8 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - E's GYM</title>
-  <link rel="icon" type="image/png" href="/gym-php-v2/assets/fotot/favicon.png">
-  <link rel="stylesheet" href="/gym-php-v2/assets/css/skeleti.css">
+  <link rel="icon" type="image/png" href="../assets/fotot/favicon.png">
+  <link rel="stylesheet" href="../pjesa_css/skeleti.css">
   <style>
     body {
       background: #111;
@@ -137,7 +137,7 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
     🏋️ Member: <span>member</span> / <span>member123</span>
   </div>
 
-  <a href="/gym-php-v2/pages/kreu.php" class="back">← Kthehu te faqja kryesore</a>
+  <a href="kreu.php" class="back">← Kthehu te faqja kryesore</a>
 </div>
 
 </body>
