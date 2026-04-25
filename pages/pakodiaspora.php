@@ -2,7 +2,7 @@
 session_start();
 
 $pageTitle = 'Pako Diasporë';
-$pageScripts = ['/gym-php-v2/assets/js/pakot.js'];
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/pakot.js'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $id = $_POST['id'] ?? '';
@@ -34,14 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $successQuantity = $quantity;
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <main class="product-page">
   <div class="product-container">
     
     <div class="product-image-box">
-      <img src="/gym-php-v2/assets/fotot/diaspora.png" alt="Pako mujore për Diasporë">
+      <img src="/GYMWEBSITE-UEB26_GR23/assets/fotot/diaspora.png" alt="Pako mujore për Diasporë">
     </div>
 
     <div class="product-info-box">
@@ -62,7 +62,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <input type="hidden" name="id" value="pakodiaspora">
         <input type="hidden" name="title" value="Pako Mujore për Diasporë">
         <input type="hidden" name="price" value="19.99">
-        <input type="hidden" name="image" value="/gym-php-v2/assets/fotot/diaspora.png">
+        <input type="hidden" name="image" value="/GYMWEBSITE-UEB26_GR23/assets/fotot/diaspora.png">
         <input type="hidden" name="quantity" id="quantity-input" value="1">
 
         <div class="quantity">
@@ -78,7 +78,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         Pako bëhet aktive nga momenti i pagesës dhe zgjat 30 ditë.
       </p>
 
-      <a href="/gym-php-v2/pages/pakot.php" class="back-link">← Kthehu te të gjitha pakot</a>
+      <a href="/GYMWEBSITE-UEB26_GR23/pages/pakot.php" class="back-link">← Kthehu te të gjitha pakot</a>
     </div>
   </div>
 </main>
@@ -117,4 +117,4 @@ Swal.fire({
 </script>
 <?php endif; ?>
 
-<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>

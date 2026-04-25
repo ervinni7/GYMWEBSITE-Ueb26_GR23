@@ -1,16 +1,16 @@
 <?php
 session_start();
 $pageTitle   = 'Dietat';
-$pageScripts = ['/gym-php-v2/assets/js/diet.js'];
-require_once dirname(__DIR__) . '/includes/header.php';
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/diet.js'];
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <section aria-label="Përmbledhje e dietave" class="intro-section">
   <h1>Përmbledhje Dietash</h1>
   <div class="intro-layout">
     <div class="intro-text">
-      <p><e>Të hash një dietë të shëndetshme dhe të ekuilibruar është një pjesë e rëndësishme e ruajtjes së shëndetit të mirë dhe mund t'ju ndihmojë të ndiheni më mirë. Kjo do të thotë të hani një shumëllojshmëri ushqimesh në përmasat e duhura dhe të konsumoni sasinë e duhur të ushqimit dhe pijeve për të arritur dhe mbajtur një peshë të shëndetshme trupore.</e></p>
-      <p><e>Adoptimi i një mënyre të shëndetshme të të ushqyerit është një investim afatgjatë në mirëqenie dhe energji ditore. Dieta nuk ka për qëllim privimin, por balancimin e sasisë së ushqimit sipas nevojave të trupit. Çdo trup është unik — disa kërkojnë më shumë kalori për rritje muskulare, të tjerë fokusohen në humbje peshe ose thjesht në mbajtjen e një forme të qëndrueshme. Duke kuptuar gjendjen fizike fillestare dhe qëllimin që synoni, ju mund të përcaktoni më lehtë stilin ushqimor dhe planin e dietës që i përshtatet më së miri ritmit tuaj të jetës. Në bazë të qëllimit tuaj - humbje peshe, shtim mase apo mirëmbajtje - ju mund të zgjidhni një nga dietat tona të strukturuara. Përdor kalkulatorin BMI në të majtë për të pasur një ide më të qartë rreth gjendjes tënde trupore.</e></p>
+      <p>Të hash një dietë të shëndetshme dhe të ekuilibruar është një pjesë e rëndësishme e ruajtjes së shëndetit të mirë dhe mund t'ju ndihmojë të ndiheni më mirë. Kjo do të thotë të hani një shumëllojshmëri ushqimesh në përmasat e duhura dhe të konsumoni sasinë e duhur të ushqimit dhe pijeve për të arritur dhe mbajtur një peshë të shëndetshme trupore.</p>
+      <p>Adoptimi i një mënyre të shëndetshme të të ushqyerit është një investim afatgjatë në mirëqenie dhe energji ditore. Dieta nuk ka për qëllim privimin, por balancimin e sasisë së ushqimit sipas nevojave të trupit. Çdo trup është unik — disa kërkojnë më shumë kalori për rritje muskulare, të tjerë fokusohen në humbje peshe ose thjesht në mbajtjen e një forme të qëndrueshme. Duke kuptuar gjendjen fizike fillestare dhe qëllimin që synoni, ju mund të përcaktoni më lehtë stilin ushqimor dhe planin e dietës që i përshtatet më së miri ritmit tuaj të jetës. Në bazë të qëllimit tuaj - humbje peshe, shtim mase apo mirëmbajtje - ju mund të zgjidhni një nga dietat tona të strukturuara. Përdor kalkulatorin BMI në të majtë për të pasur një ide më të qartë rreth gjendjes tënde trupore.</p>
 
       <div class="highlights">
         <span class="chip">🍎 Ushqim i balancuar</span>
@@ -59,7 +59,8 @@ require_once dirname(__DIR__) . '/includes/header.php';
   <div class="diet-item" data-target="lowcarb"><h3>Low-Carb🥗</h3><p>Karbo të ulëta • 6-10 javë</p></div>
 </section>
 
-<section id="diet-details">
+
+<section id="diet-details" style="display:block;">
   <h2>Detajet e dietave</h2>
 
   <div id="diet-bulking" class="diet-card">
@@ -114,8 +115,10 @@ require_once dirname(__DIR__) . '/includes/header.php';
     </table>
     <h4>Shembull jave</h4>
     <ul>
-      <li>2 vakte me peshk</li><li>2 vakte me mish pule/gjeli</li>
-      <li>1 vakt me mish të kuq të ligët</li><li>Perime çdo ditë + fruta 1-2x në ditë</li>
+      <li>2 vakte me peshk</li>
+      <li>2 vakte me mish pule/gjeli</li>
+      <li>1 vakt me mish të kuq të ligët</li>
+      <li>Perime çdo ditë + fruta 1-2x në ditë</li>
     </ul>
   </div>
 
@@ -131,8 +134,66 @@ require_once dirname(__DIR__) . '/includes/header.php';
     </table>
     <h4>Shembull dite</h4>
     <ul>
-      <li>Mëngjes: Tërshërë me qumësht soje + fruta</li><li>Drekë: Oriz integral + thjerrëza + sallatë</li>
-      <li>Snack: Fara + arra miks</li><li>Darkë: Tofu i pjekur + perime në zgarë</li>
+      <li>Mëngjes: Tërshërë me qumësht soje + fruta</li>
+      <li>Drekë: Oriz integral + thjerrëza + sallatë</li>
+      <li>Snack: Fara + arra miks</li>
+      <li>Darkë: Tofu i pjekur + perime në zgarë</li>
     </ul>
   </div>
 
+  <div id="diet-highprotein" class="diet-card">
+    <h3>High-Protein — Proteinë e lartë</h3>
+    <table class="diet-detail">
+      <tr><th>Qëllimi</th><td>Rikuperim, tonifikim dhe ruajtje muskulare</td></tr>
+      <tr><th>Proteinë</th><td>2.2-2.8 g/kg</td></tr>
+      <tr><th>Karbohidrate</th><td>Mesatare</td></tr>
+      <tr><th>Yndyrna</th><td>Të ulëta-mesatare</td></tr>
+      <tr><th>Më e përshtatshme për</th><td>Faza definimi ose recomp</td></tr>
+    </table>
+    <h4>Shembull dite</h4>
+    <ul>
+      <li>Mëngjes: Vezë + të bardha + perime</li>
+      <li>Snack: Shaker whey + banane</li>
+      <li>Drekë: Pulë + oriz + perime</li>
+      <li>Snack: Kos grek + fara chia</li>
+      <li>Darkë: Gjel deti + sallatë</li>
+    </ul>
+  </div>
+
+  <div id="diet-lowcarb" class="diet-card">
+    <h3>Low-Carb — Humbje peshe e qëndrueshme</h3>
+    <table class="diet-detail">
+      <tr><th>Qëllimi</th><td>Humbje dhjami me karbo të ulëta</td></tr>
+      <tr><th>Karbohidrate</th><td>80-140 g/ditë</td></tr>
+      <tr><th>Proteinë</th><td>E lartë</td></tr>
+      <tr><th>Yndyrna</th><td>Mesatare</td></tr>
+      <tr><th>Fokus</th><td>Perime, mish i ligët, yndyrna të shëndetshme</td></tr>
+    </table>
+    <h4>Shembull dite</h4>
+    <ul>
+      <li>Mëngjes: Omeletë me perime</li>
+      <li>Drekë: Pulë + sallatë jeshile</li>
+      <li>Snack: Arra ose bajame</li>
+      <li>Darkë: Peshk + brokoli + sallatë</li>
+    </ul>
+  </div>
+</section>
+
+<!-- jQuery hover efektet -->
+<script>
+$(document).ready(function() {
+  $('.diet-item').hover(
+    function() { $(this).css({ transform: 'scale(1.04)', transition: 'transform 0.5s ease' }); },
+    function() { $(this).css('transform', 'scale(1)'); }
+  );
+  $('.cta-link').hover(
+    function() { $(this).css({ opacity: '0.85', transition: 'opacity 0.2s ease' }); },
+    function() { $(this).css('opacity', '1'); }
+  );
+});
+</script>
+
+<!-- ✅ diet.js me path të saktë -->
+<script src="/GYMWEBSITE-UEB26_GR23/Pjesa_JS/diet.js"></script>
+
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>

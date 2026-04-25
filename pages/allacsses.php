@@ -2,7 +2,7 @@
 session_start();
 
 $pageTitle   = 'All Club Access - Lifetime';
-$pageScripts = ['/gym-php-v2/assets/js/pakot.js'];
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/pakot.js'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $id = $_POST['id'] ?? '';
@@ -32,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     }
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <main class="product-page">
   <div class="product-container">
     <div class="product-image-box">
-      <img src="/gym-php-v2/assets/fotot/allacsses.png" alt="All Club Access - Lifetime">
+      <img src="/GYMWEBSITE-UEB26_GR23/assets/fotot/allacsses.png" alt="All Club Access - Lifetime">
     </div>
 
     <div class="product-info-box">
@@ -60,7 +60,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <input type="hidden" name="id" value="all-club-access-lifetime">
         <input type="hidden" name="title" value="All Club Access - Lifetime">
         <input type="hidden" name="price" value="5">
-        <input type="hidden" name="image" value="/gym-php-v2/assets/fotot/allacsses.png">
+        <input type="hidden" name="image" value="/GYMWEBSITE-UEB26_GR23/assets/fotot/allacsses.png">
         <input type="hidden" name="quantity" id="quantity-input" value="1">
 
         <div class="quantity">
@@ -73,7 +73,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
       </form>
 
       <p class="product-note">Kjo pako ka vlefshmëri të përhershme dhe nuk skadon kurrë.</p>
-      <a href="/gym-php-v2/pages/pakot.php" class="back-link">← Kthehu te të gjitha pakot</a>
+      <a href="/GYMWEBSITE-UEB26_GR23/pages/pakot.php" class="back-link">← Kthehu te të gjitha pakot</a>
     </div>
   </div>
 </main>
@@ -112,4 +112,4 @@ Swal.fire({
 </script>
 <?php endif; ?>
 
-<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>

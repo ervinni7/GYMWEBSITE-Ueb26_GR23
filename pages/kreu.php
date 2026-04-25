@@ -2,23 +2,23 @@
 session_start();
 
 $pageTitle   = 'Kreu';
-$pageScripts = ['/gym-php-v2/assets/js/kreu.js'];
+$pageScripts = ['/GYMWEBSITE-UEB26_GR23/Pjesa_JS/kreu.js'];
 
 $sections = [
     [
-        'image' => '/gym-php-v2/assets/fotot/rrethnesh.png',
+        'image' => '/GYMWEBSITE-UEB26_GR23/assets/fotot/rrethnesh.png',
         'alt'   => 'GYM logo and some dumbbells',
         'title' => 'Më shumë rreth nesh',
         'text'  => 'Në gym-in tonë, shëndeti dhe forca shkojnë bashkë. Prej vitit 2018 kemi qenë zgjedhja e mijëra personave që kërkojnë rezultate të qëndrueshme. Trajnerë të certifikuar, ambient i pastër dhe programe të personalizuara.'
     ],
     [
-        'image' => '/gym-php-v2/assets/fotot/ourmission.png',
+        'image' => '/GYMWEBSITE-UEB26_GR23/assets/fotot/ourmission.png',
         'alt'   => 'Some people training in gym and the text Our Mission',
         'title' => 'Misioni ynë',
         'text'  => 'Duke ofruar programe të personalizuara dhe trajnerë ekspertë, synojmë të jemi zgjedhja numër një në fitnes. Misioni ynë është t\'ju ndihmojmë të arrini qëllimet tuaja me siguri dhe kënaqësi.'
     ],
     [
-        'image' => '/gym-php-v2/assets/fotot/pajisjemoderne.png',
+        'image' => '/GYMWEBSITE-UEB26_GR23/assets/fotot/pajisjemoderne.png',
         'alt'   => 'Gym modern equipment',
         'title' => 'Pajisje moderne',
         'text'  => 'Pajisjet moderne sigurojnë stërvitje më efikase, të sigurt dhe komode, duke ofruar teknologji të avancuar dhe rezultate më të mira në çdo ushtrim.'
@@ -30,9 +30,9 @@ $openingHours = 'E hënë - E shtunë 06:00 - 00:00';
 
 $contactTitle = 'NA KONTAKTONI';
 $contactText  = 'Për bashkëpunime dhe informata shtesë na kontaktoni:';
-$contactLink  = '/gym-php-v2/pages/joinus.php';
+$contactLink  = '/GYMWEBSITE-UEB26_GR23/pages/joinus.php';
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <section id="kreu" class="container" aria-labelledby="kreu-title">
@@ -116,4 +116,4 @@ $(document).ready(function() {
 });
 </script>
 
-<?php require_once dirname(__DIR__) . '/includes/footer.php'; ?>
+<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>
