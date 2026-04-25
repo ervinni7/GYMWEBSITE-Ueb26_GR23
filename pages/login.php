@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once __DIR__ . '/../classes/User.php';
+require_once(__DIR__ . '/classes/User.php');
 
 // Nëse është tashmë i kyçur, dërgo te dashboard
 if (isset($_SESSION['user_role'])) {
-    header('Location: dashboard.php');
+    header('Location: /GYMWEBSITE-UEB26_GR23/pages/dashboard.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             // Cookie — kujton emrin 30 ditë (Cookies kërkesë Faza I)
             setcookie('gym_last_user', $user->getName(), time() + 30 * 24 * 3600, '/');
-            header('Location: dashboard.php');
+            header('Location: /GYMWEBSITE-UEB26_GR23/pages/dashboard.php');
             exit;
         } else {
             $error = 'Emri i përdoruesit ose fjalëkalimi është i gabuar.';
@@ -137,7 +137,7 @@ $lastUser = $_COOKIE['gym_last_user'] ?? '';
     🏋️ Member: <span>member</span> / <span>member123</span>
   </div>
 
-  <a href="kreu.php" class="back">← Kthehu te faqja kryesore</a>
+  <a href="/GYMWEBSITE-UEB26_GR23/pages/kreu.php" class="back">← Kthehu te faqja kryesore</a>
 </div>
 
 </body>
