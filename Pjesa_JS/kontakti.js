@@ -107,3 +107,27 @@ $(document).ready(function(){
     });
 
 });
+// Numrimi i karaktereve    
+$(document).ready(function() {
+    const messageInput = $('#message-input');
+    const charCount = $('#char-count');
+
+    if (messageInput.length && charCount.length) {
+        
+        charCount.text(messageInput.val().length);
+        
+        messageInput.on('input', function() {
+            const currentLength = $(this).val().length;
+            charCount.text(currentLength);
+            
+            // Ndrysho ngjyrën
+            if (currentLength < 5) {
+                charCount.css('color', '#ff6b6b');
+            } else if (currentLength < 50) {
+                charCount.css('color', '#ffa500');
+            } else {
+                charCount.css('color', '#4caf50');
+            }
+        });
+    }
+});

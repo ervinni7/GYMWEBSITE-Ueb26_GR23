@@ -152,19 +152,24 @@ require_once dirname(__DIR__) . '/headeri/header.php';
             </p>
           <?php endif; ?>
 
-          <textarea
-            name="message"
-            placeholder="Mesazhi juaj..."
-            rows="3"
-            class="kontakt-input"
-            required
-          ><?php echo htmlspecialchars($old['message']); ?></textarea>
-          <?php if (!empty($errors['message'])): ?>
+   <textarea
+    name="message"
+    id="message-input"
+    placeholder="Mesazhi juaj..."
+    rows="3"
+    class="kontakt-input"
+    required
+    maxlength="500"
+><?php echo htmlspecialchars($old['message']); ?></textarea>
+       <?php if (!empty($errors['tel'])): ?>
             <p style="color:#ff6b6b;font-size:13px;margin:-8px 0 8px;text-align:left;">
-              ⚠️ <?php echo $errors['message']; ?>
+              ⚠️ <?php echo $errors['tel']; ?>
             </p>
           <?php endif; ?>
-
+<!-- Counter i karaktereve -->
+<div style="text-align:right; font-size:12px; color:#999; margin-top:-15px; margin-bottom:15px;">
+    <span id="char-count">0</span> / 500 karaktere
+</div>
           <button type="submit" name="dergomesazhin" class="kontakt-btn">
             DËRGO MESAZHIN
           </button>

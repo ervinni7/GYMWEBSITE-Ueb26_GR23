@@ -303,6 +303,9 @@ margin-bottom: 10px;
   transform: rotate(45deg);
   color:#333;
 }
-
+[data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 
