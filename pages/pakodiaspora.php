@@ -106,11 +106,11 @@ minusBtn.addEventListener("click", function () {
 });
 </script>
 
-<?php if ($successQuantity > 0): ?>
-<script> // Jquery aninmacion i gatshem
+<?php if (isset($_POST['add_to_cart'])): ?>
+<script>
 Swal.fire({
   icon: "success",
-  text: "Keni shtuar <?= $successQuantity ?> pako me sukses ✅",
+  text: "Keni shtuar <?= (int) $_POST['quantity'] ?> pako me sukses ✅",
   showConfirmButton: false,
   timer: 2000
 });
