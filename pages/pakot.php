@@ -34,7 +34,7 @@ require_once dirname(__DIR__) . '/headeri/header.php';
 ?>
 
 <section id="pricing" class="shop-section" data-aos="fade-up">
-  <h1 data-aos="fade-up">Shopppppp1</h1>
+  <h1 data-aos="fade-up">Shop</h1>
   <p class="shop-subtitle" data-aos="fade-up">Zgjedh pakon që i përshtatet qëllimeve të tua</p>
   <?php if (!empty($successMessage)): ?>
     <p style="color: lime; text-align:center; margin-bottom:20px;">

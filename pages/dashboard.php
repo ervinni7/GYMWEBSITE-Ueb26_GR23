@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once dirname(__DIR__) . '/classes/User.php';
-require_once dirname(__DIR__) . '/classes/gymclasses.php';
+require_once(__DIR__ . '/../classes/user.php');
+require_once(__DIR__ . '/../classes/gymclass.php');
 
 // Mbrojtja — vetëm të kyçurit
 if (!isset($_SESSION['user_role'])) {
@@ -15,7 +15,6 @@ $name       = $_SESSION['user_name'];
 $email      = $_SESSION['user_email'];
 $membership = $_SESSION['user_membership'];
 
-// Shembull arrays (Konceptet bazë PHP — numeric, associative, multidimensional)
 $stats_admin = ['Anëtarë Aktivë' => 247, 'Klasa Sot' => 4, 'Lokacione' => 3, 'Trajnerë' => 12];
 
 $tips = [
@@ -31,20 +30,15 @@ $days  = ['E Hënë','E Martë','E Mërkurë','E Enjte','E Premte','E Shtunë','
 $today = $days[(int)date('N') - 1];
 $tip   = $tips[$today];
 
-// Klasat nga OOP GymClass
 $classes = GymClass::getAll();
-
-// Sort klasat sipas emrit (Sortimet — kërkesë Faza I)
 usort($classes, fn($a, $b) => strcmp($a->getName(), $b->getName()));
 
-require_once dirname(__DIR__) . '/headeri/header.php';
+require_once(__DIR__ . '/../headeri/header.php');
 ?>
 
 <style>
   body { background: #111; }
   .dash { max-width: 1100px; margin: 36px auto; padding: 0 20px; }
-
-  /* Hero kartë */
   .dash-hero {
     background: linear-gradient(135deg, #1a1a1a, #2b1600);
     border: 1px solid #ff8800; border-radius: 14px;
@@ -61,8 +55,6 @@ require_once dirname(__DIR__) . '/headeri/header.php';
   .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-left: 8px; vertical-align: middle; }
   .badge.admin  { background: #9b59b6; color: #fff; }
   .badge.member { background: #ff8800; color: #fff; }
-
-  /* Grid me karta */
   .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 18px; margin-bottom: 24px; }
   .dash-card {
     background: #1a1a1a; border: 1px solid #2a2a2a;
@@ -74,16 +66,12 @@ require_once dirname(__DIR__) . '/headeri/header.php';
   .dash-card p, .dash-card li { color: #ccc; font-size: 14px; line-height: 1.7; }
   .dash-card ul { padding-left: 18px; }
   .dash-card a { text-decoration: none; display: block; color: inherit; }
-
-  /* Admin stats */
   .admin-panel { background: #14091e; border: 1px solid #9b59b6; border-radius: 12px; padding: 22px; margin-bottom: 24px; }
   .admin-panel h3 { color: #c39bd3; margin: 0 0 16px; font-size: 16px; }
   .stats-row { display: flex; gap: 14px; flex-wrap: wrap; }
   .stat-box  { flex: 1; min-width: 120px; background: #1e0e2e; border-radius: 10px; padding: 16px; text-align: center; }
   .stat-box .num { font-size: 30px; font-weight: bold; color: #c39bd3; }
   .stat-box .lbl { font-size: 12px; color: #aaa; margin-top: 4px; }
-
-  /* Tabela klasave */
   .classes-table { width: 100%; border-collapse: collapse; }
   .classes-table th { background: #ff8800; color: #fff; padding: 11px 14px; text-align: left; font-size: 13px; text-transform: uppercase; }
   .classes-table td { padding: 11px 14px; border-bottom: 1px solid #222; color: #ccc; font-size: 14px; }
@@ -91,12 +79,8 @@ require_once dirname(__DIR__) . '/headeri/header.php';
   .classes-table tr:hover td { background: #1f1f1f; }
   .tag-premium { background: #9b59b6; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 10px; }
   .tag-standard { color: #4caf50; font-size: 13px; }
-
-  /* Nav shortcuts */
   .shortcut { text-align: center; cursor: pointer; }
   .shortcut .icon { font-size: 34px; margin-bottom: 8px; }
-
-  /* Logout */
   .logout-btn {
     display: inline-block; margin: 20px 0 40px;
     background: #c0392b; color: #fff;
@@ -109,7 +93,6 @@ require_once dirname(__DIR__) . '/headeri/header.php';
 
 <div class="dash">
 
-  <!-- HERO -->
   <div class="dash-hero">
     <div class="dash-avatar"><?php echo $role === 'admin' ? '👑' : '🏋️'; ?></div>
     <div>
@@ -124,7 +107,6 @@ require_once dirname(__DIR__) . '/headeri/header.php';
   </div>
 
   <?php if ($role === 'admin'): ?>
-  <!-- PANEL ADMIN — vetëm admini e sheh -->
   <div class="admin-panel">
     <h3>👑 Paneli i Administratorit</h3>
     <div class="stats-row">
@@ -138,10 +120,7 @@ require_once dirname(__DIR__) . '/headeri/header.php';
   </div>
   <?php endif; ?>
 
-  <!-- KARTAT -->
   <div class="dash-grid">
-
-    <!-- Anëtarësimi -->
     <div class="dash-card">
       <h3>🏷️ Anëtarësimi im</h3>
       <p><strong style="color:#fff;"><?php echo htmlspecialchars($membership); ?></strong></p>
@@ -158,7 +137,6 @@ require_once dirname(__DIR__) . '/headeri/header.php';
       </ul>
     </div>
 
-    <!-- Orari -->
     <div class="dash-card">
       <h3>🕐 Orari i Palestrës</h3>
       <ul style="list-style:none;padding:0;">
@@ -168,15 +146,12 @@ require_once dirname(__DIR__) . '/headeri/header.php';
       </ul>
     </div>
 
-    <!-- Këshilla e ditës — nga associative array $tips -->
     <div class="dash-card">
       <h3>💡 Këshilla e Ditës — <?php echo $today; ?></h3>
       <p style="font-style:italic;color:#e0e0e0;">"<?php echo htmlspecialchars($tip); ?>"</p>
     </div>
-
   </div>
 
-  <!-- KLASAT — nga OOP GymClass::getAll(), të sortuara -->
   <div class="dash-card" style="margin-bottom:24px;">
     <h3>📅 Klasat e Disponueshme</h3>
     <table class="classes-table">
@@ -209,7 +184,6 @@ require_once dirname(__DIR__) . '/headeri/header.php';
     </table>
   </div>
 
-  <!-- SHORTCUTS -->
   <div class="dash-grid">
     <div class="dash-card shortcut">
       <a href="/GYMWEBSITE-UEB26_GR23/pages/pakot.php">
@@ -238,4 +212,4 @@ require_once dirname(__DIR__) . '/headeri/header.php';
 
 </div>
 
-<?php require_once dirname(__DIR__) . '/headeri/footeri.php'; ?>
+<?php require_once(__DIR__ . '/../headeri/footeri.php'); ?>
